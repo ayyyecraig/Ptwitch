@@ -27,6 +27,10 @@ Taking the chance to round out my experience with a PERN stack, I will be tackli
 * Express
 * JWT AUTH
 
+## Post MVP
+***
+In hopes of meeting MVP as quickly as possible I will be hoping to spend the rest of my time integreting Twitch's API to bring in all their streamers, their schedules and much more information to turn this project up to the next level. 
+
  ### Boards and Charts
  ***
  * [Trello](https://trello.com/b/pt5c9NHi/ptwitch)
