@@ -1,40 +1,70 @@
-# PTwitch
-An app to compliment your twitch experience -- Parellel to Twitch
-***
-<img src="https://i.imgur.com/MsNRiXM.png" width=50% height=60%><img src = "https://cdn.vox-cdn.com/thumbor/o_vGcpWqjROjHHWpSonqi4GoTs8=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/60887093/twitch.0.0.jpg" width=50% height=5%>
+# Getting Started with Create React App
 
-***
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Available Scripts
 
-Twitch is fun site for streamers and something millions of people enjoy using to peer into peoples live's. Streamers especially twitch streamers are starting to hit peak popularity, from scandels to award shows its hard to deny the appeal. Just like music, the amount of streamers and streams is immeasurable, reaching a new stream is hard without a good reference or scandal to bring you into it. That's what PTwitch is hoping to close the gap in..
+In the project directory, you can run:
 
+### `npm start`
 
-- Like spotify has playlist, with PTwitch you can create a profile! 
-- Add all your favorite peps, delete who you're over!  
-- Share your streamers with others, comment, or reccomend new streamers to anyone on PTwitch! 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-***
-## Starting
-Taking the chance to round out my experience with a PERN stack, I will be tackling this project with first structuring both front end and back ends of this project just to get a solid understanding of how I want this to plan out. Once structure the data will be migrated and the front end will commence with focusing heavily on CRUD and JWT. 
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Technologies                          
-* React                                
-* Sequelize                                              
-* Postgres
-* CSS/ HTML
-* Heroku 
-* JavaScript
-* Express
-* JWT AUTH
+### `npm test`
 
-## Post MVP
-***
-In hopes of meeting MVP as quickly as possible I will be hoping to spend the rest of my time integreting Twitch's API to bring in all their streamers, their schedules and much more information to turn this project up to the next level. 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
- ### Boards and Charts
- ***
- * [Trello](https://trello.com/b/pt5c9NHi/ptwitch)
- <img src="https://i.imgur.com/Yl7bKSb.png" width=30% > <img src="https://i.imgur.com/GMdOj4r.png" width=30%>
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-               
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
