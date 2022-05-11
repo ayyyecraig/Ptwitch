@@ -7,7 +7,6 @@ const Register = () => {
 let navigate = useNavigate()
   const [formValues, setFormValues] = useState({
     firstName: '',
-    lastName: '',
     username: '',
     email: '',
     password: '',
@@ -22,14 +21,12 @@ let navigate = useNavigate()
     e.preventDefault()
     await RegisterUser({
       firstName: formValues.firstName,
-      lastName: formValues.lastName,
       username: formValues.username,
       email: formValues.email,
       password: formValues.password
     })
     setFormValues({
       firstName: '',
-      lastName: '',
       username: '',
       email: '',
       password: '',
@@ -50,17 +47,6 @@ let navigate = useNavigate()
               type="text"
               placeholder="John"
               value={formValues.firstName}
-              required
-            />
-          </div>
-          <div className="input-wrapper">
-            <label htmlFor="name">Last Name</label>
-            <input
-              onChange={handleChange}
-              name="lastName"
-              type="text"
-              placeholder="Smith"
-              value={formValues.lastName}
               required
             />
           </div>

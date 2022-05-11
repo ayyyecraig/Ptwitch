@@ -1,32 +1,45 @@
-import React from "react"
-// import { useNavigate } from "react-router-dom"
-// import React,{ useEffect, useState } from 'react'
-// import { GetAllCars } from '../services/CarServices'
-
+import { useNavigate } from "react-router-dom"
+import React,{ useEffect, useState } from 'react'
+import { GetAllPlaylists } from "../services/PlaylistServices" 
+import Streamer  from '../components/Streamers'
+import { GetStreamers } from "../services/StreamerServices"
 
 const PlayList = () => {
  
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
 
-    // const showCar = (car) => {
-    //     navigate(`view/${car.id}`)
-    // }
+    const showList = () => {
+        navigate(`playlists/${playlists.id}`)
+    }
 
-    // const [cars, setCars] = useState([])
+    const [playlists, setPlaylists] = useState([])
 
-    // useEffect(() =>{
-    //     const handleCars = async () => {
-    //         const data = await GetAllCars()
-    //         console.log(data)
-    //         setCars(data)
-    //     }
-    //     handleCars()
-    // }, [])
- 
+    useEffect(() =>{
+        const handlePlaylists = async () => {
+            const data = await GetAllPlaylists()
+           console.log(data)
+            setPlaylists(data)
+        }
+        handlePlaylists()
+    }, [])
+
 
     return(
-        <div className="playlists">
+        <div >
             <h3>Who's Watching Who</h3>
+            <div className="playlists">
+                { playlists.map((playlists) => (
+                    <div onClick={() => showList(playlists)}>
+                     
+                     
+                    
+                    </div>
+                ))}
+
+                <div className="streamer-container">
+                    <Streamer />
+                </div>
+            </div>
         </div>
     )
 

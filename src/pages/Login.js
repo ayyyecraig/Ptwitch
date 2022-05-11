@@ -18,7 +18,7 @@ const LogIn = (props) => {
       setFormValues({ email: '', password: '' })
       props.setUser(payload)
       props.toggleAuthenticated(true)
-      navigate('/garage')
+      navigate('/')
     }
 
     return (
