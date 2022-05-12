@@ -1,5 +1,22 @@
 import Client from './api'
 
+
+
+export const CreatePlaylist = async (userId, playlistId) => {
+  try {
+    const res = await Client.post(`/user/${userId}/${playlistId}`, {
+      userId: userId,
+      playlistId: playlistId
+    })
+    return res.data
+
+  } catch (error) {
+    throw error
+  }
+}
+
+
+
 export const GetAllPlaylists = async () => {
   try {
     const res = await Client.get('/playlists')
@@ -18,24 +35,12 @@ export const GetPlaylistDetails = async (streamers) => {
   }
 }
 
-// export const CreatePlaylist = async (user_id) => {
-//   try {
-//     const res = await Client.post(`/${user_id}`)
-//     return res.data
-
-//   } catch (error) {
-//     throw error
-//   }
-// }
 
 
 // export const AddStreamers = async (
 //     playlist_id, 
     // streamer_id,
-//     name, 
-//     contentType, 
-//     schedule, 
-//     img, 
+//    
 //     ) => {
 //   try {
 //     const res = await Client.put(`/playlists/${playlist_id}`, {

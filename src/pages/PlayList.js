@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import React,{ useEffect, useState } from 'react'
 import { GetAllPlaylists } from "../services/PlaylistServices" 
-import { GetStreamers } from "../services/StreamerServices"
-
+import { GetStreamers, AddStreamer } from "../services/StreamerServices"
 
 const PlayList = () => {
 
@@ -23,6 +22,13 @@ const PlayList = () => {
         handleStreamers()
     }, [])
 
+     const addToPlaylists = () => {
+         AddStreamer(streamers.id, PlayList.id)
+         navigate('/user')
+         console.log(streamers)
+
+     }
+
     
 
     
@@ -35,10 +41,10 @@ const PlayList = () => {
          { 
              streamers.map((streamer) => (
                  <div onClick={() => showStreamer(streamer)}>
+                     <div className="streamer-details">
                      <img className="streamer-pics" src={streamer.img} alt="streamer" style={{display: 'block', maxWidth:'20%'}} />
-                     
-                     <div className="details">
                        <h1>{streamer.name}</h1>
+                       <button onClick={() => {addToPlaylists()}} className='addto'>Add to PlayList</button>
                      </div>
                  </div>
 

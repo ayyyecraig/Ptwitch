@@ -5,8 +5,7 @@ import Home from './pages/Home'
 import User from './pages/User'
 import './App.css';
 import Register from './pages/Register' 
-import Playlist from './pages/PlayList'
-import Streamers from './pages/Streamer'
+import Playlist from './pages/Playlist'
 import LogIn from './pages/Login'
 import { CheckSession } from './services/Auth'
 import { useEffect, useState } from 'react'
@@ -50,9 +49,7 @@ export default function App() {
           <Route path="/" element={<Home authenticated={authenticated} user={user}/>}  />
           <Route path="/user" element={<User user={user}          authenticated={authenticated}/>}/>
           <Route path="/playlists" element={<Playlist user={user}
-                    authenticated={authenticated}/>}/> 
-           <Route path="/streamers" element={<Streamers user={user}
-                    authenticated={authenticated}/>}/>           
+                    authenticated={authenticated}/>}/>          
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<LogIn setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
                     
