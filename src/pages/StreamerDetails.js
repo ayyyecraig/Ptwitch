@@ -5,7 +5,7 @@ import Comments from '../components/Comments'
 import WriteComment from '../components/WriteComment'
 import { GetStreamerDetails, AddStreamer} from "../services/StreamerServices"
 
-const StreamerDets = () => {
+const StreamerDets = ( user ) => {
 
     let { id } = useParams()
     let navigate = useNavigate()
@@ -37,8 +37,8 @@ const StreamerDets = () => {
                        <button onClick={() => {addToPlaylists()}} className='addto'>Add to PlayList</button>
                      </div>
                
-                    <Comments streamer={streamer} />
-                    <WriteComment streamer={streamer} />
+                    <Comments streamer={streamer} user={user}/>
+                    <WriteComment streamer={streamer} user={user}/>
 
 
          

@@ -20,7 +20,7 @@ export const GetStreamerDetails = async (streamer_id) =>{
 
 export const AddStreamer = async (streamer_id, user_id) => {
     try {
-        const res = await Client.put(`/${streamer_id}`, {userId: user_id})
+        const res = await Client.put(`/streamers/${streamer_id}`, {userId: user_id})
         return res.data
     } catch (error) {
         throw error 

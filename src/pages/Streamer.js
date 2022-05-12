@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom"
 import React,{ useEffect, useState } from 'react'
-import { GetAllPlaylists } from "../services/PlaylistServices" 
 import { GetStreamers, AddStreamer } from "../services/StreamerServices"
 
-const PlayList = () => {
+const Streamer = () => {
 
     let navigate = useNavigate()
 
     const showStreamer = (streamer) => {
+        console.log(streamer, "bam")
         navigate(`/${streamer.id}`)
     }
 
@@ -23,7 +23,7 @@ const PlayList = () => {
     }, [])
 
      const addToPlaylists = () => {
-         AddStreamer(streamers.id, PlayList.id)
+         AddStreamer(streamers.id)
          navigate('/user')
          console.log(streamers)
 
@@ -60,4 +60,4 @@ const PlayList = () => {
     )
 
 }
-export default PlayList
+export default Streamer
