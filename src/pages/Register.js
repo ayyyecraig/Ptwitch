@@ -32,7 +32,7 @@ let navigate = useNavigate()
       password: '',
       confirmPassword: ''
     })
-    navigate('/login')
+    navigate('/user')
   }
 
   return (

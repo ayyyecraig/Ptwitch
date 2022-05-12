@@ -3,21 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { NewComment } from '../services/CommentServices';
 
 const WriteComment = (props) => {
-    const [ form, setForm ] = useState({
+    const [ formValues, setForm ] = useState({
         content: ''
     }) 
 
     let navigate = useNavigate()
 
     const handleChange = (e) => {
-        setForm({...form, [e.target.name]: e.target.value })
+        setForm({...formValues, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await NewComment(form.content, props.user.id, props.streamer.id)
+        await NewComment(formValues.content, props.user.id, props.streamer.id)
         navigate(`/streamers`)
-        setForm({...form, content: ''})
+        setForm({...formValues, content: ''})
     }
     return (
         <div className='write-comment'>
@@ -25,10 +25,10 @@ const WriteComment = (props) => {
                 className="Box"
                 type="text"
                 name="content"
-                value={form.content}
+                value={formValues.content}
                 onChange={handleChange}
             ></textarea>
-             <button className="submit-button" type="submit" onClick={handleSubmit} disabled={!form.rating}>Comment</button>
+             <button className="submit-button" type="submit" onClick={handleSubmit} disabled={!formValues.rating}>Comment</button>
         </div>
     )
 }

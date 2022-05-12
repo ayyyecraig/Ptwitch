@@ -6,7 +6,7 @@ import User from './pages/User'
 import './App.css';
 import Register from './pages/Register' 
 import Streamer from './pages/Streamer'
-import LogIn from './pages/Login'
+import LogIn from './components/Login'
 import { CheckSession } from './services/Auth'
 import { useEffect, useState } from 'react'
 import StreamerDets from './pages/StreamerDetails'
@@ -21,7 +21,9 @@ export default function App() {
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
+    console.log(user, "here")
     toggleAuthenticated(true)
+    console.log(authenticated)
   }
   
   
@@ -35,7 +37,7 @@ export default function App() {
     useEffect(() =>{
       const token = localStorage.getItem('token')
   
-      if (token) {
+      if (true) { //change back to token 
         checkToken()
       }
     }, [])
@@ -43,23 +45,27 @@ export default function App() {
   return (
     <div className="App">
        <Nav
-        authenticated={authenticated}
+       authenticated={authenticated}
         user={user} handleLogOut={handleLogOut}/>
        <main>
          <Routes>
           <Route path="/" element={<Home authenticated={authenticated} user={user}/>}  />
+
           <Route path="/user" element={<User user={user}          authenticated={authenticated}/>}/>
+
           <Route path="/streamers" element={<Streamer user={user}
                     authenticated={authenticated}/>}/>    
+
           <Route path="streamers/:id"   element={<StreamerDets/>} />
           <Route path='/comments' element={<Comments />} />
          
 
 
 
-
-          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<LogIn setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
+          <Route path="/register" element={<Register />} />
+
+   
                     
 
          </Routes>

@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Nav = ({ authenicated, user, handleLogOut }) => {
-    let authenicatedOptions
-    if(user){
-        authenicatedOptions = (
+const Nav = (props) => {
+    let authenticatedOptions
+    if(props.user){
+        authenticatedOptions = (
             <nav className='authenicated'>
                 <Link to="/">Home</Link>
                 <Link to="/user">My Streams</Link>
                 <Link to='/streamers'>Streaming PlayLists</Link>
 
-                <Link onClick={handleLogOut} to="/" className='logout'>
+                <Link onClick={props.handleLogOut} to="/" className='logout'>
                     Log Out
                 </Link> 
             </nav>
@@ -26,10 +26,12 @@ const Nav = ({ authenicated, user, handleLogOut }) => {
 
         </nav>
     )
+    console.log(props.authenticated)
     return (
        <nav> 
         <div>
-        {  authenicated && user ? authenicatedOptions : publicOptions}
+        {  props.authenticated ? authenticatedOptions : publicOptions}
+        {/* {authenicatedOptions} */}
         </div>
        </nav>
     )

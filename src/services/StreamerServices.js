@@ -26,3 +26,12 @@ export const AddStreamer = async (streamer_id, user_id) => {
         throw error 
     }
 }
+
+export const RemoveStream = async (streamer_id) => {
+    try{
+        const res = await Client.put(`/${streamer_id}`)
+        return res.data
+    } catch (error){
+        throw error
+    }
+}
