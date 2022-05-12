@@ -1,48 +1,56 @@
 import { useNavigate } from "react-router-dom"
 import React,{ useEffect, useState } from 'react'
 import { GetAllPlaylists } from "../services/PlaylistServices" 
-import Streamer  from '../components/Streamers'
 import { GetStreamers } from "../services/StreamerServices"
 
+
 const PlayList = () => {
- 
+
     let navigate = useNavigate()
 
-    const showList = () => {
-        navigate(`playlists/${playlists.id}`)
+    const showStreamer = (streamer) => {
+        navigate(`streamers/${streamer.id}`)
     }
 
-    const [playlists, setPlaylists] = useState([])
+    const [streamers, setStreamers] = useState([])
 
     useEffect(() =>{
-        const handlePlaylists = async () => {
-            const data = await GetAllPlaylists()
-           console.log(data)
-            setPlaylists(data)
+        const handleStreamers = async () => {
+            const data = await GetStreamers()
+            console.log(data)
+            setStreamers(data)
         }
-        handlePlaylists()
+        handleStreamers()
     }, [])
 
+    
 
+    
+
+
+
+  
     return(
-        <div >
-            <h3>Who's Watching Who</h3>
-            <div className="playlists">
-                { playlists.map((playlists) => (
-                    <div onClick={() => showList(playlists)}>
+        <div className="streamers-Playlists ">
+         { 
+             streamers.map((streamer) => (
+                 <div onClick={() => showStreamer(streamer)}>
+                     <img className="streamer-pics" src={streamer.img} alt="streamer" style={{display: 'block', maxWidth:'20%'}} />
                      
-                     
-                    
-                    </div>
-                ))}
+                     <div className="details">
+                       <h1>{streamer.name}</h1>
+                     </div>
+                 </div>
 
-                <div className="streamer-container">
-                    <Streamer />
-                </div>
-            </div>
+             ))
+         }
+
+         
         </div>
+            
+
+     
     )
 
 }
-
 export default PlayList

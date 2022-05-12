@@ -21,7 +21,8 @@ const Nav = ({ authenicated, user, handleLogOut }) => {
         <nav>
             <Link to="/">Home</Link>
             <Link to="/login">My Streams</Link>
-            <Link to='/playlists'>Streaming PlayLists</Link>
+            <Link to='/playlists'>PlayLists</Link>
+            <Link to='/streamers'>Streamers</Link>
             <Link to="register" className='links'>Register</Link>
 
         </nav>
