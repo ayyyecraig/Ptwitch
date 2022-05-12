@@ -1,22 +1,17 @@
 import { useNavigate } from "react-router-dom"
 import React,{ useEffect, useState } from 'react'
-import { GetStreamers, AddStreamer } from "../services/StreamerServices"
+import { GetStreamers, AddStreamer, GetStreamerDetails } from "../services/StreamerServices"
 
 const Streamer = () => {
 
     let navigate = useNavigate()
-
-    const showStreamer = (streamer) => {
-        console.log(streamer, "bam")
-        navigate(`/${streamer.id}`)
-    }
 
     const [streamers, setStreamers] = useState([])
 
     useEffect(() =>{
         const handleStreamers = async () => {
             const data = await GetStreamers()
-            console.log(data)
+            console.log(data.id, "sick")
             setStreamers(data)
         }
         handleStreamers()
@@ -25,11 +20,15 @@ const Streamer = () => {
      const addToPlaylists = () => {
          AddStreamer(streamers.id)
          navigate('/user')
-         console.log(streamers)
+ 
 
      }
-
     
+    const showStreamer = (streamer) => {
+        console.log(streamer)
+        navigate(`${streamer.id}`)
+    }
+
 
     
 

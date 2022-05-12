@@ -11,7 +11,7 @@ export const GetStreamers = async() => {
 
 export const GetStreamerDetails = async (streamer_id) =>{
     try {
-        const res = await Client.get(`/streamers/${streamer_id}`)
+        const res = await Client.get(`/${streamer_id}`)
         return res.data
     } catch (error) {
         throw error
