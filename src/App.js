@@ -9,7 +9,8 @@ import Playlist from './pages/Playlist'
 import LogIn from './pages/Login'
 import { CheckSession } from './services/Auth'
 import { useEffect, useState } from 'react'
-  
+import StreamerDets from './pages/StreamerDetails'
+import Comments from './components/Comments'
 
 
 export default function App() {
@@ -48,8 +49,15 @@ export default function App() {
          <Routes>
           <Route path="/" element={<Home authenticated={authenticated} user={user}/>}  />
           <Route path="/user" element={<User user={user}          authenticated={authenticated}/>}/>
-          <Route path="/playlists" element={<Playlist user={user}
-                    authenticated={authenticated}/>}/>          
+          <Route path="/streamers" element={<Playlist user={user}
+                    authenticated={authenticated}/>}/>    
+          <Route path="/streamers/:id"   element={<StreamerDets/>} />
+          <Route path='/comments' element={<Comments />} />
+          <Route path='/comments/:id' element={<Comments />}/>
+
+
+
+
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<LogIn setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
                     

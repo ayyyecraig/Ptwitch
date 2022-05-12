@@ -8,7 +8,7 @@ const Nav = ({ authenicated, user, handleLogOut }) => {
             <nav className='authenicated'>
                 <Link to="/">Home</Link>
                 <Link to="/user">My Streams</Link>
-                <Link to='/playlists'>Streaming PlayLists</Link>
+                <Link to='/streamers'>Streaming PlayLists</Link>
 
                 <Link onClick={handleLogOut} to="/" className='logout'>
                     Log Out
@@ -21,7 +21,7 @@ const Nav = ({ authenicated, user, handleLogOut }) => {
         <nav>
             <Link to="/">Home</Link>
             <Link to="/login">My Streams</Link>
-            <Link to='/playlists'>PlayLists</Link>
+            <Link to='/streamers'>Watchlists and Streamers</Link>
             <Link to="register" className='links'>Register</Link>
 
         </nav>

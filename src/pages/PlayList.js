@@ -8,7 +8,7 @@ const PlayList = () => {
     let navigate = useNavigate()
 
     const showStreamer = (streamer) => {
-        navigate(`streamers/${streamer.id}`)
+        navigate(`/${streamer.id}`)
     }
 
     const [streamers, setStreamers] = useState([])
@@ -44,10 +44,11 @@ const PlayList = () => {
                      <div className="streamer-details">
                      <img className="streamer-pics" src={streamer.img} alt="streamer" style={{display: 'block', maxWidth:'20%'}} />
                        <h1>{streamer.name}</h1>
-                       <button onClick={() => {addToPlaylists()}} className='addto'>Add to PlayList</button>
+                       
                      </div>
-                 </div>
-
+               
+                    <button onClick={() => {addToPlaylists()}} className='addto'>Add to PlayList</button> 
+                    </div>
              ))
          }
 

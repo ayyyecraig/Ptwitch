@@ -1,12 +1,11 @@
 import Client from './api'
 
-export const NewComment = async ( content, ownerId, playlistId) => {
+export const NewComment = async ( content, userId, streamerId) => {
     try {
-        const res = await Client.post(`/comments/${userId}/${playlistId}`, {
-          rating: rating,
+        const res = await Client.post(`/comments/${userId}/${streamerId}`, {
           content: content,
           userId: userId,
-          playlistId: playlistId
+          streamerId: streamerId
       })
       return res.data
     } catch (error) {
@@ -14,16 +13,16 @@ export const NewComment = async ( content, ownerId, playlistId) => {
     }
   }
 
-  export const GetComments = async (playlistId) => {
+  export const GetComments = async (streamerId) => {
       try {
-        const res = await Client.get(`/comments/${playlistId}`)
+        const res = await Client.get(`/comments/${streamerId}`)
         return res.data
       } catch (error) {
           throw error
       }
   }
 
-//   export const GetReviewById = async(reviewId) => {
+//   export const GetById = async(reviewId) => {
 //       try {
 //           const res = await Client.get(`reviews/${reviewId}`)
 //           return res.data
