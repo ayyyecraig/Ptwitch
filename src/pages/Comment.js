@@ -26,6 +26,9 @@ const handleComment = async () => {
  const handle = async () => {
      handleComment()
  } 
+ useEffect(() => {
+     handle()
+ })
 
 const handleChange = (e) => {
     setFormValues({...formValues, [e.target.name]: e.target.value })

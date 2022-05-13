@@ -11,7 +11,7 @@ const Streamer = ({user}) => {
     useEffect(() =>{
         const handleStreamers = async () => {
             const data = await GetStreamers()
-            console.log(data, "sick")
+         
             setStreamers(data)
         }
         handleStreamers()
@@ -25,7 +25,7 @@ const Streamer = ({user}) => {
      }
     
     const showStreamer = (streamer) => {
-        console.log(streamer)
+        
         navigate(`${streamer.id}`)
     }
 

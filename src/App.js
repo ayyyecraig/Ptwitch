@@ -37,7 +37,7 @@ export default function App() {
     useEffect(() =>{
       const token = localStorage.getItem('token')
   
-      if (true) { //change back to token 
+      if (token) { //change back to token 
         checkToken()
       }
     }, [])

@@ -25,10 +25,11 @@ useEffect(() => {
             }
         })
         setComments(selectedComments)
+        console.log(data, "boo")
  
     } 
     handleComments()
-}, [comments.id])
+}, [comments.id, id])
 
 
 return (

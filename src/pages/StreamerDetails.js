@@ -14,13 +14,12 @@ const StreamerDets = ( user ) => {
 
     useEffect(() =>{
         const handleStreamers = async () => {
-            console.log(data)
-            const data = await GetStreamerDetails(id)
             
+            const data = await GetStreamerDetails(id)
             setStreamer(data)
         }
-        handleStreamers()
-    }, [])
+        handleStreamers(id)
+    }, [id])
 
    
     const AddToUser = () => {
