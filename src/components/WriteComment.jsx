@@ -28,7 +28,7 @@ const WriteComment = (props) => {
                 value={formValues.content}
                 onChange={handleChange}
             ></textarea>
-             <button className="submit-button" type="submit" onClick={handleSubmit} disabled={!formValues.rating}>Comment</button>
+             <button className="submit-button" type="submit" onClick={handleSubmit} disabled={!formValues.content}>Comment</button>
         </div>
     )
 }

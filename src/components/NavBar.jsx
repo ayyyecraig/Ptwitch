@@ -26,12 +26,11 @@ const Nav = (props) => {
 
         </nav>
     )
-    console.log(props.authenticated)
+
     return (
        <nav> 
         <div>
         {  props.authenticated ? authenticatedOptions : publicOptions}
-        {/* {authenicatedOptions} */}
         </div>
        </nav>
     )

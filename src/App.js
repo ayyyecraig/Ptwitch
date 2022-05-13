@@ -11,6 +11,7 @@ import { CheckSession } from './services/Auth'
 import { useEffect, useState } from 'react'
 import StreamerDets from './pages/StreamerDetails'
 import Comments from './components/Comments'
+import CommentDetails from './pages/Comment'
 
 
 export default function App() {
@@ -21,9 +22,8 @@ export default function App() {
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
-    console.log(user, "here")
     toggleAuthenticated(true)
-    console.log(authenticated)
+  
   }
   
   
@@ -58,7 +58,7 @@ export default function App() {
 
           <Route path="streamers/:id"   element={<StreamerDets/>} />
           <Route path='/comments' element={<Comments />} />
-         
+          <Route path='/comments/:id' element={<CommentDetails />} />
 
 
 

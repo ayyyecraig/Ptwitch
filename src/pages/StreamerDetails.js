@@ -5,7 +5,7 @@ import Comments from '../components/Comments'
 import WriteComment from '../components/WriteComment'
 import { GetStreamerDetails, AddStreamer} from "../services/StreamerServices"
 
-const StreamerDets = ( user, authenticated ) => {
+const StreamerDets = ( user ) => {
 
     let { id } = useParams()
     let navigate = useNavigate()
@@ -14,8 +14,9 @@ const StreamerDets = ( user, authenticated ) => {
 
     useEffect(() =>{
         const handleStreamers = async () => {
-            const data = await GetStreamerDetails(id)
             console.log(data)
+            const data = await GetStreamerDetails(id)
+            
             setStreamer(data)
         }
         handleStreamers()

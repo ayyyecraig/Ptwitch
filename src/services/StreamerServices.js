@@ -11,7 +11,7 @@ export const GetStreamers = async() => {
 
 export const GetStreamerDetails = async (streamer_id) =>{
     try {
-        const res = await Client.get(`/${streamer_id}`)
+        const res = await Client.get(`/streamers/${streamer_id}`)
         return res.data
     } catch (error) {
         throw error
@@ -29,7 +29,7 @@ export const AddStreamer = async (streamer_id, user_id) => {
 
 export const RemoveStream = async (streamer_id) => {
     try{
-        const res = await Client.put(`/${streamer_id}`)
+        const res = await Client.delete(`/streamers/${streamer_id}`)
         return res.data
     } catch (error){
         throw error

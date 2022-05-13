@@ -4,6 +4,7 @@ import { GetComments } from '../services/CommentServices';
 
 const Comments = ({ user }) => {
 
+    
     const [comments, setComments] = useState([])
 
     let { id } = useParams();
@@ -24,7 +25,7 @@ useEffect(() => {
             }
         })
         setComments(selectedComments)
-        console.log(data)
+ 
     } 
     handleComments()
 }, [comments.id])
@@ -38,6 +39,7 @@ return (
                  viewComment(comment)}>
                      <p className='comment-dets'>{comment.User.username}</p>
                      <p className='comment-dets'>{comment.content}</p>
+                     
                  </div>
             ))
         }

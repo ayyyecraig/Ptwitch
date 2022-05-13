@@ -9,9 +9,9 @@ const CommentDetails = ({ user }) => {
         username: '',
         content: ''
     })
-}
 
 let navigate = useNavigate();
+
 let { id } = useParams();
 
 const [ comment, setComment] = useState({})
@@ -20,7 +20,18 @@ const handleComment = async () => {
     const data = await GetById(id)
     setComment(data)
     setFormValues({ username: comment.User.username,
-    content: review.content})
+    content: comment.content})
+}
+
+ const handle = async () => {
+     handleComment()
+ } 
+
+const handleChange = (e) => {
+    setFormValues({...formValues, [e.target.name]: e.target.value })
+}
+
+
 
 const deleteComment = async (comment) => {
     await DeleteComment(comment.id)
@@ -44,10 +55,10 @@ return (
         onChange={handleChange}
         ></textarea>
         {
-         user.id === review.ownerId ?
+         user.id === comment.userId ?
           <div className="review-options">
-            <button className="review-update" onClick={() => updateReview()}>Update</button>
-            <button className="review-delete" onClick={() => deleteReview(review)}>Delete</button>
+            <button className="comment-update" onClick={() => update()}>Update</button>
+            <button className="comment-delete" onClick={() => deleteComment(comment)}>Delete</button>
           </div>
                 : ''
             }
