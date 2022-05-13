@@ -22,32 +22,31 @@ export const NewComment = async ( content, userId, streamerId) => {
       }
   }
 
-//   export const GetById = async(reviewId) => {
-//       try {
-//           const res = await Client.get(`reviews/${reviewId}`)
-//           return res.data
-//       } catch (error) {
-//           throw error
-//       }
-//   }
+  export const GetById = async(commentId) => {
+      try {
+          const res = await Client.get(`comments/${commentId}`)
+          return res.data
+      } catch (error) {
+          throw error
+      }
+  }
 
-//   export const DeleteReview = async (reviewId) => {
-//     try {
-//       const res = await Client.delete(`/reviews/${reviewId}`)
-//       return res.data
-//     } catch (error) {
-//         throw error
-//     }
-// }
+  export const DeleteComment = async (commentId) => {
+    try {
+      const res = await Client.delete(`/comments/${commentId}`)
+      return res.data
+    } catch (error) {
+        throw error
+    }
+}
 
-// export const UpdateReview = async (reviewId, rating, content) => {
-//     try {
-//         const res = await Client.put(`/reviews/${reviewId}`, {
-//             rating: rating,
-//             content: content
-//         })
-//         return res.data
-//     } catch (error) {
-//         throw error
-//     }
-// }
+export const UpdateComment = async (commentId, content) => {
+    try {
+        const res = await Client.put(`/comments/${commentId}`, {
+            content: content
+        })
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
