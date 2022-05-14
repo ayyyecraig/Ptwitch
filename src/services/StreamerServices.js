@@ -20,7 +20,7 @@ export const GetStreamerDetails = async (streamer_id) =>{
 
 export const AddStreamer = async (streamer_id, user_id) => {
     try {
-        const res = await Client.put(`/streamers/${streamer_id}`, {userId: user_id})
+        const res = await Client.put(`/streamers/${streamer_id}/${user_id}`, {userId: user_id, status: false})
         return res.data
     } catch (error) {
         throw error 
@@ -29,7 +29,7 @@ export const AddStreamer = async (streamer_id, user_id) => {
 
 export const RemoveStream = async (streamer_id, user_id) => {
     try{
-        const res = await Client.delete(`/streamers/${streamer_id}`, {user_id: user_id})
+        const res = await Client.put(`/streamers/${streamer_id}`, {status: true})
         return res.data
     } catch (error){
         throw error
