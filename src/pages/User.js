@@ -16,7 +16,7 @@ const User = ({user}) => {
         const data = await GetStreamers()
         let selectedStreamer = []
         data.forEach((streamer) => {
-            if(streamer.userId === user.id && streamer.status === false){
+            if(streamer.userId === user && streamer.status === false){
               selectedStreamer.push(streamer)
             }
         })

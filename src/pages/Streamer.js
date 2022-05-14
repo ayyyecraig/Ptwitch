@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom"
 import React,{ useEffect, useState } from 'react'
-import { GetStreamers, AddStreamer} from "../services/StreamerServices"
+import { GetStreamers} from "../services/StreamerServices"
 
-const Streamer = ({user}) => {
+const Streamer = () => {
 
     let navigate = useNavigate()
 
@@ -17,12 +17,6 @@ const Streamer = ({user}) => {
         handleStreamers()
     }, [])
 
-     const AddToUser = () => {
-         AddStreamer(streamers.id, user.id)
-         navigate('/user')
- 
-
-     }
     
     const showStreamer = (streamer) => {
         
@@ -46,7 +40,7 @@ const Streamer = ({user}) => {
                        
                      </div>
                
-                    <button onClick={() => {AddToUser()}} className='addto'>Details</button> 
+                    <button>Details</button> 
                     </div>
              ))
          }
