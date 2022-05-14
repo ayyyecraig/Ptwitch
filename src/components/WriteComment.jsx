@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NewComment } from '../services/CommentServices';
 
-const WriteComment = (props) => {
+
+const WriteComment = ( props ) => {
     const [ formValues, setForm ] = useState({
-        content: ''
+      
     }) 
 
     let navigate = useNavigate()
+
 
     const handleChange = (e) => {
         setForm({...formValues, [e.target.name]: e.target.value })
@@ -17,14 +19,15 @@ const WriteComment = (props) => {
         e.preventDefault()
         await NewComment(formValues.content, props.user.id, props.streamer.id)
         navigate(`/streamers`)
-        setForm({...formValues, content: ''})
+        setForm({...formValues})
     }
+
     return (
         <div className='write-comment'>
               <textarea
                 className="Box"
                 type="text"
-                name="content"
+                // name="content"
                 value={formValues.content}
                 onChange={handleChange}
             ></textarea>

@@ -15,7 +15,7 @@ export const NewComment = async ( content, userId, streamerId) => {
 
   export const GetComments = async (streamerId) => {
       try {
-        const res = await Client.get(`/comments/${streamerId}`)
+        const res = await Client.get(`/comments/streamers/${streamerId}`)
         return res.data
       } catch (error) {
           throw error

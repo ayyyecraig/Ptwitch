@@ -17,22 +17,18 @@ const Comments = ({ user }) => {
 
 useEffect(() => { 
     const handleComments = async () => {
-        const data = await GetComments(id)
-           console.log( "here")
+        const data = await GetComments(id)   
         let selectedComments = []
-     
         data.forEach((comment) => {
-            
-            if(comment.streamerId === parseInt(id)){
-                selectedComments.push(comment)
+        if(comment.streamerId === parseInt(id)){
+         selectedComments.push(comment)
             }
         })
         setComments(selectedComments)
-        console.log(data, "boo")
- 
+
     } 
     handleComments()
-}, [comments.id, id])
+}, [comments.id])
 
 
 return (

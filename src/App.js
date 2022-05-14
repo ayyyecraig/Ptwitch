@@ -10,6 +10,7 @@ import LogIn from './components/Login'
 import { CheckSession } from './services/Auth'
 import { useEffect, useState } from 'react'
 import StreamerDets from './pages/StreamerDetails'
+import Comment from './pages/Comment'
 import Comments from './components/Comments'
 import CommentDetails from './pages/Comment'
 
@@ -49,19 +50,27 @@ export default function App() {
         user={user} handleLogOut={handleLogOut}/>
        <main>
          <Routes>
+           {/* home */}
           <Route path="/" element={<Home authenticated={authenticated} user={user}/>}  />
-
+          {/* users playlist  */}
           <Route path="/user" element={<User user={user}          authenticated={authenticated}/>}/>
-
+          {/* all streamers page */}
           <Route path="/streamers" element={<Streamer user={user}
-                    authenticated={authenticated}/>}/>    
+                    authenticated={authenticated}/>}/>   
 
-          <Route path="streamers/:id"   element={<StreamerDets/>} />
+            {/* indivual streamer  */}
+          <Route path="streamers/:id"   element={<StreamerDets authenticated={authenticated} user={user}/> } />
+
+            {/* shows all comments */}
           <Route path='/comments' element={<Comments />} />
+
+          {/* comment controller */}
           <Route path='/comments/:id' element={<CommentDetails />} />
 
+          <Route path="/comments/:id" element={<Comment user={user} authenticated={authenticated} />} />
 
 
+            {/* auth routes */}
           <Route path="/login" element={<LogIn setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
           <Route path="/register" element={<Register />} />
 

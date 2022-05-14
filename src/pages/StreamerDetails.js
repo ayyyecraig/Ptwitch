@@ -24,7 +24,7 @@ const StreamerDets = ( user ) => {
    
     const AddToUser = () => {
         AddStreamer(streamer.id, user.id)
-   
+        navigate('/user/id')
     }
 
     return(

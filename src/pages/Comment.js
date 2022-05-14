@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+
 import { GetById, UpdateComment, DeleteComment } from '../services/CommentServices';
 
-const CommentDetails = ({ user }) => {
+const CommentDetails = ( user ) => {
 
     const [ formValues, setFormValues ] = useState({
         username: '',
@@ -12,14 +12,14 @@ const CommentDetails = ({ user }) => {
 
 let navigate = useNavigate();
 
-let { id } = useParams();
 
 const [ comment, setComment] = useState({})
 
 const handleComment = async () => {
-    const data = await GetById(id)
+
+    const data = await GetById(comment )
     setComment(data)
-    setFormValues({ username: comment.User.username,
+    setFormValues({ username: comment.user.username,
     content: comment.content})
 }
 

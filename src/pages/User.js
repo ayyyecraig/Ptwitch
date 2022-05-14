@@ -19,6 +19,7 @@ const User = ({user}) => {
             selectedStreamer.push(streamer)
             
         })
+        console.log()
         setStreamers(selectedStreamer)
     }
 
@@ -28,7 +29,9 @@ const User = ({user}) => {
 
     const removeStreamer = (streamerId) => {
         RemoveStream(streamerId)
-        navigate('/user')
+        console.log(removeStreamer)
+        navigate('/')
+
      
 
     }
@@ -44,7 +47,7 @@ const User = ({user}) => {
                    <img className="streamer-pics" src={streamer.img} alt="streamer" style={{display: 'block', maxWidth:'20%'}} />
                      <h1>{streamer.name}</h1>
                  </div>
-                 <button onClick={() => updateStreamer(streamer.id)}>remove from watchlist</button>
+                 <button onClick={() => removeStreamer(streamer.id)}>remove from watchlist</button>
                 </div>
             ))}
         </div>
