@@ -16,16 +16,17 @@ const User = ({user}) => {
         const data = await GetStreamers()
         let selectedStreamer = []
         data.forEach((streamer) => {
-            selectedStreamer.push(streamer)
-            
+            if(streamer.userId === user.id && streamer.status === false){
+              selectedStreamer.push(streamer)
+            }
         })
-        console.log()
+    
         setStreamers(selectedStreamer)
     }
 
     useEffect(() => {
         handleStreamers()
-    }, [streamers.id])
+    })
 
     const removeStreamer = (streamerId) => {
         RemoveStream(streamerId)

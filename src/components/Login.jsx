@@ -29,7 +29,6 @@ const LogIn = (props) => {
                         type="email"
                         name="email"
                         value={formValues.email}
-                        placeholder="john.smith@example.com"
                         onChange={handleChange}
                         required
                         className='email'

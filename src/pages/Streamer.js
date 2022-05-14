@@ -46,7 +46,7 @@ const Streamer = ({user}) => {
                        
                      </div>
                
-                    <button onClick={() => {AddToUser()}} className='addto'>Add Streamer</button> 
+                    <button onClick={() => {AddToUser()}} className='addto'>Details</button> 
                     </div>
              ))
          }
