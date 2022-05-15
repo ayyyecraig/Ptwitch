@@ -12,12 +12,13 @@ import { useEffect, useState } from 'react'
 import StreamerDets from './pages/StreamerDetails'
 import Comment from './pages/Comment'
 import Comments from './components/Comments'
-import CommentDetails from './pages/Comment'
+
 
 
 export default function App() {
     const [authenticated, toggleAuthenticated] = useState(false)
     const [user, setUser] = useState(null)
+    const [userId, setUserId] = useState(null)
   
   
   const checkToken = async () => {
@@ -52,20 +53,24 @@ export default function App() {
          <Routes>
            {/* home */}
           <Route path="/" element={<Home authenticated={authenticated} user={user}/>}  />
+
           {/* users playlist  */}
-          <Route path="/user" element={<User user={user}          authenticated={authenticated}/>}/>
-          {/* all streamers page */}
+          {/* <Route path="/user" element={<User user={user}     authenticated={authenticated}/>}/> */}
+
+          <Route path="/user" element={<User user={user}    setUserId={setUserId}      authenticated={authenticated}/>}/> */}
+          {/* all streamers page
+
           <Route path="/streamers" element={<Streamer user={user}
                     authenticated={authenticated}/>}/>   
 
             {/* indivual streamer  */}
           <Route path="streamers/:id"   element={<StreamerDets authenticated={authenticated} user={user}/> } />
 
-            {/* shows all comments */}
-          <Route path='/comments' element={<Comments />} />
+            shows all comments
+          <Route path='/comments' element={<Comments user={user} authenticated={authenticated}/>} />
 
           {/* comment controller */}
-          <Route path='/comments/:id' element={<CommentDetails />} />
+          <Route path='/comments/:id' element={<Comments user={user} authenticated={authenticated} />} />
 
           <Route path="/comments/:id" element={<Comment user={user} authenticated={authenticated} />} />
 

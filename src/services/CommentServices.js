@@ -2,6 +2,7 @@ import Client from './api'
 
 export const NewComment = async ( content, userId, streamerId) => {
     try {
+      console.log(userId, "here")
         const res = await Client.post(`/comments/${userId}/${streamerId}`, {
           content: content,
           userId: userId,
@@ -15,7 +16,7 @@ export const NewComment = async ( content, userId, streamerId) => {
 
   export const GetComments = async (streamerId) => {
       try {
-        const res = await Client.get(`/comments/streamers/${streamerId}`)
+        const res = await Client.get(`/comments/${streamerId}`)
         return res.data
       } catch (error) {
           throw error

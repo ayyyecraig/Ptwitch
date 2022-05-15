@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 import Comments from '../components/Comments'
 import WriteComment from '../components/WriteComment'
 import { GetStreamerDetails, AddStreamer} from "../services/StreamerServices"
+
 
 const StreamerDets = ({user, authenticated}) => {
 
     let { id } = useParams()
     let navigate = useNavigate()
 
-    const [streamer, setStreamer] = useState([])
+    const [streamer, setStreamer] = useState({})
 
     useEffect(() =>{
         const handleStreamers = async () => {
@@ -18,13 +20,18 @@ const StreamerDets = ({user, authenticated}) => {
             const data = await GetStreamerDetails(id)
             setStreamer(data)
         }
-        handleStreamers(id)
-    }, [id])
+        handleStreamers()
+    }, [])
 
    
     const AddToUser = () => {
-        AddStreamer(streamer.id, user.id)
+        if(streamer.status === true ) {
+            AddStreamer(streamer.id, user.id)
         navigate('/user')
+        } else{
+            alert('poggers')
+        }
+        
     }
 
     return(
@@ -39,11 +46,13 @@ const StreamerDets = ({user, authenticated}) => {
                        }
                      </div>
                     
-               
+                    {authenticated && user ? 
+                    
+                    <WriteComment streamer={streamer} user={user}/>: <WriteComment streamer={streamer} user={user}/>
+                    }
+                    
+                        
                     <Comments streamer={streamer} user={user}/>
-                    <WriteComment streamer={streamer} user={user}/>
-
-
          
         </div>
             

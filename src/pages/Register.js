@@ -20,13 +20,13 @@ let navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      firstName: formValues.firstName,
+      firstName: formValues.name,
       username: formValues.username,
       email: formValues.email,
       password: formValues.password
     })
     setFormValues({
-      firstName: '',
+      name: '',
       username: '',
       email: '',
       password: '',
@@ -46,7 +46,7 @@ let navigate = useNavigate()
               name="firstName"
               type="text"
               placeholder="John"
-              value={formValues.firstName}
+              value={formValues.name}
               required
             />
           </div>

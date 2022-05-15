@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { GetComments } from '../services/CommentServices';
 
-const Comments = ({ user }) => {
+const Comments = (props) => {
 
     
     const [comments, setComments] = useState([])
@@ -19,16 +19,16 @@ useEffect(() => {
     const handleComments = async () => {
         const data = await GetComments(id)   
         let selectedComments = []
-        data.forEach((comment) => {
-        if(comment.streamerId === parseInt(id)){
-         selectedComments.push(comment)
-            }
-        })
+        // data.forEach((comment) => {
+        // if(comment.streamerId === parseInt(id)){
+        //  selectedComments.push(comment)
+        //     }
+        // })
         setComments(selectedComments)
 
     } 
     handleComments()
-}, [comments.id])
+})
 
 
 return (

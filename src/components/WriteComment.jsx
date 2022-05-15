@@ -4,9 +4,7 @@ import { NewComment } from '../services/CommentServices';
 
 
 const WriteComment = ( props ) => {
-    const [ formValues, setForm ] = useState({
-      
-    }) 
+    const [ formValues, setForm ] = useState({});
 
     let navigate = useNavigate()
 
@@ -18,8 +16,8 @@ const WriteComment = ( props ) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await NewComment(formValues.content, props.user.id, props.streamer.id)
-        navigate(`/streamers`)
-        setForm({...formValues})
+        navigate(`streamers`)
+        setForm({...formValues, content: ''})
     }
 
     return (
@@ -27,11 +25,11 @@ const WriteComment = ( props ) => {
               <textarea
                 className="Box"
                 type="text"
-                // name="content"
+                name="content"
                 value={formValues.content}
                 onChange={handleChange}
             ></textarea>
-             <button className="submit-button" type="submit" onClick={handleSubmit} disabled={!formValues.content}>Comment</button>
+             <button className="submit-button" type="submit" onClick={handleSubmit} >Comment</button>
         </div>
     )
 }

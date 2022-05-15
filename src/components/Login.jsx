@@ -15,6 +15,7 @@ const LogIn = (props) => {
     const handleSubmit = async (e) => {
       e.preventDefault()
       const payload = await SignInUser(formValues)
+      console.log(payload)
       setFormValues({ email: '', password: '' })
       props.setUser(payload)
       props.toggleAuthenticated(true)
