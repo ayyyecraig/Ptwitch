@@ -1,13 +1,13 @@
 import React,{ useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { GetStreamerDetails, GetStreamers, RemoveStream } from '../services/StreamerServices'
+import {  GetStreamers, RemoveStream } from '../services/StreamerServices'
 
 const User = ({user}) => {
 
     let navigate = useNavigate()
 
     const showStreamer = (streamer) => {
-        navigate(`/${streamer.id}`)
+        navigate(`/user`)
     }
 
     const [streamers, setStreamers] = useState([])
@@ -28,11 +28,11 @@ const User = ({user}) => {
 
     const removeStreamer = (streamerId) => {
         RemoveStream(streamerId)
-        navigate('/user')
-     
+        window.location.reload(`/user`)
 
     }
 
+  
 
 
     return(

@@ -38,9 +38,9 @@ export const AddTo = async (streamer_id, user_id) => {
     }
 }
 
-export const RemoveStream = async (streamer_id) => {
+export const RemoveStream = async (streamer_id, user_id) => {
     try{
-        const res = await Client.put(`/user/${streamer_id}`, {status: true})
+        const res = await Client.delete(`/streamers/${streamer_id}, ${user_id}`)
         return res.data
     } catch (error){
         throw error

@@ -4,7 +4,9 @@ import { NewComment } from '../services/CommentServices';
 
 
 const WriteComment = ( props ) => {
-    const [ formValues, setForm ] = useState({});
+    const [ formValues, setForm ] = useState({
+        content: ''
+    });
 
     let navigate = useNavigate()
 
@@ -15,8 +17,8 @@ const WriteComment = ( props ) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await NewComment(formValues.content,  props.streamer.id)
-        navigate(`/streamers/:id`)
+        await NewComment(formValues.content, props.streamer.id)
+        window.location.reload(`/streamers/:id`)
         setForm({...formValues, content: ''})
     }
 

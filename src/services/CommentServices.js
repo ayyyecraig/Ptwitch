@@ -1,11 +1,11 @@
 import Client from './api'
 
-export const NewComment = async ( content, streamerId) => {
+export const NewComment = async ( content, streamer_Id) => {
     try {
 
-        const res = await Client.post(`/comments/${streamerId}`, {
+        const res = await Client.post(`/comments/${streamer_Id}`, {
           content: content,
-          streamerId: streamerId
+          streamerId: streamer_Id
       })
       return res.data
     } catch (error) {
@@ -13,36 +13,36 @@ export const NewComment = async ( content, streamerId) => {
     }
   }
 
-  export const GetComments = async (streamerId) => {
+  export const GetComments = async (streamer_Id) => {
       try {
-        const res = await Client.get(`/comments/${streamerId}`)
+        const res = await Client.get(`/comments/${streamer_Id}`)
         return res.data
       } catch (error) {
           throw error
       }
   }
 
-  export const GetById = async(commentId) => {
+  export const GetById = async(comment_Id) => {
       try {
-          const res = await Client.get(`comments/${commentId}`)
+          const res = await Client.get(`comments/${comment_Id}`)
           return res.data
       } catch (error) {
           throw error
       }
   }
 
-  export const DeleteComment = async (commentId) => {
+  export const DeleteComment = async (comment_Id) => {
     try {
-      const res = await Client.delete(`/comments/${commentId}`)
+      const res = await Client.delete(`/comments/${comment_Id}`)
       return res.data
     } catch (error) {
         throw error
     }
 }
 
-export const UpdateComment = async (commentId, content) => {
+export const UpdateComment = async (comment_Id, content) => {
     try {
-        const res = await Client.put(`/comments/${commentId}`, {
+        const res = await Client.put(`/comments/${comment_Id}`, {
             content: content
         })
         return res.data

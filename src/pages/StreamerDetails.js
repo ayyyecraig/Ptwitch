@@ -48,6 +48,10 @@ const StreamerDets = ({user, authenticated}) => {
                             <h2>becky234</h2>
                             <p>here he here he</p>
                        </div>
+                       {/* <div className='fake'>
+                            <h2>becky234</h2>
+                            <p>poggers</p>
+                       </div> */}
 
                        <div className='emotes2'>
                         <img src="https://i.imgur.com/Rn95v0T.png" title="source: imgur.com" className='emotes2a'/>
@@ -61,13 +65,12 @@ const StreamerDets = ({user, authenticated}) => {
                        </div>
                      </div>
                     
-                    {authenticated && user ? 
+                  
                     
-                    <WriteComment streamer={streamer} />: <WriteComment streamer={streamer} />
-                    }
-                    
-                        
+                    <WriteComment streamer={streamer} /> 
+                    <div className='comments'>                 
                     <Comments streamer={streamer} />
+                    </div>  
          
         </div>
             
