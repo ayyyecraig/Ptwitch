@@ -36,8 +36,8 @@ const User = ({user}) => {
 
 
     return(
-        <div>
-            <h3>Your Streams</h3>
+        <div className='your-streams'>
+            <h3 >Your Streams</h3>
             { streamers.map((streamer) => (
                    <div onClick={() => showStreamer(streamer)}>
                    <div className="streamer-details">

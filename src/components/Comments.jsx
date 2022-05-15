@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams} from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { GetComments } from '../services/CommentServices';
 
-const Comments = ({ streamer }) => {
+const Comments = (props) => {
 
     
     const [comments, setComments] = useState([])
 
-
+    let { id } = useParams();
     let navigate = useNavigate();
 
     const viewComment = (comment) => {
@@ -17,14 +17,18 @@ const Comments = ({ streamer }) => {
 
 useEffect(() => { 
     const handleComments = async () => {
-        const data = await GetComments()   
-        
-
-        setComments(data)
+        const data = await GetComments(id)   
+        let selectedComments = []
+        // data.forEach((comment) => {
+        // if(comment.streamerId === parseInt(id)){
+        //  selectedComments.push(comment)
+        //     }
+        // })
+        setComments(selectedComments)
 
     } 
     handleComments()
-},[])
+})
 
 
 return (
