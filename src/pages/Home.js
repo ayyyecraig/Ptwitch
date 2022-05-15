@@ -158,10 +158,9 @@ const Home = ({ authenticated, user }) => {
 
   return (
     <div className='home-button'>
-       <button className='start' onClick={() => navigate('/login')}>
-          Click Here To Get Started
-        </button>
+         
     {authenticated && user ? authenticatedOptions: publicOptions}
+    
     </div>
   )
 

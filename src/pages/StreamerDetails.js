@@ -44,6 +44,10 @@ const StreamerDets = ({user, authenticated}) => {
                        {streamer.status ? 
                         <button onClick={() => {AddToUser()}} className='addto'>Add to PlayList</button> :   <button onClick={() => {AddToUser()}} className='addto'>Add to PlayList</button> 
                        }
+                       <div className='fake'>
+                            <h2>becky234</h2>
+                            <p>here he here he</p>
+                       </div>
 
                        <div className='emotes2'>
                         <img src="https://i.imgur.com/Rn95v0T.png" title="source: imgur.com" className='emotes2a'/>

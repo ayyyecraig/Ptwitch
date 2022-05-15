@@ -37,8 +37,8 @@ return (
             comments.map((comment) => (
                 <div className='comment' key={comment.id} onClick={() =>
                  viewComment(comment)}>
-                     <p className='comment-dets'>{comment.User.username}</p>
-                     <p className='comment-dets'>{comment.content}</p>
+                     <p className='comment-dets'>{comment.user.username}</p>
+                     <p className='comment-dets'>{comment.content} </p>
                      
                  </div>
             ))
