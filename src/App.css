@@ -1,13 +1,22 @@
 body{
-    background-color: #9344fb;
+    background-color: #914ceb;
 }
 
 nav{
-    background-color: rgb(177 139 220);
+    background-color: rgb(206, 183, 231);
+    box-shadow: 0 10px 20px -10px rgba(0,0,1,1);
+  
+}
+
+.logs{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-bottom: 10px;
+    flex-direction: row-reverse;
+    align-content: center;
+   
+}
+
+.norm{
+    display: flex;
 }
 
 
@@ -24,12 +33,81 @@ nav{
 }
 
 .streamer-pics{
-    
     border-radius: 25%;
 }
 
 .streamers-Playlists{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-content: space-around;
+    
 
 }
+
+.block{
+    background-color: rgb(21 21 22 / 61%);
+    color: aliceblue;
+    border-radius: 10%;
+    font-size: 5px;
+    max-width: max-content;
+    margin-top: 5px;
+    box-shadow: 0 10px 20px -10px rgba(0,0,1,1);
+  transition: all .4s ease;
+  cursor:pointer;
+  overflow: hidden;
+}
+
+.block:hover{
+    font-size: 6px;
+transform: scale(0.9);
+box-shadow: 0px 15px 25px -5px rgba(0,0,0,1);
+}
+
+
+.home-container{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px;
+    max-width: fit-content;
+    
+}
+.emotes{
+    max-width: 25%;  
+}
+
+ .home-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 5px;
+ }
+ 
+
+.start, button{   
+ border: none;
+ outline: none;
+ border-radius: 25px;
+ height:44px;
+ width: 298px;
+ background-color: #914ceb;
+ box-shadow: -1px -1px 3px ;
+}
+.start:hover{
+    box-shadow: -3px -3px 7px ;
+}
+
+.start:active{
+    box-shadow: inset 6px 6px 6px rgb(206, 183, 231), inset -6px -6px 6px rgb(206, 183, 231); ;
+
+}
+
+
+
+
+
+
+
+
