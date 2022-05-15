@@ -40,6 +40,8 @@ const StreamerDets = ({user, authenticated}) => {
                      <div className="streamer-details">
                      <img className="streamer-pics" src={streamer.img} alt="streamer" style={{display: 'block', maxWidth:'30%'}} />
                        <h1>{streamer.name}</h1>
+                       <h2>{streamer.contentType}</h2>
+                       <h2>{streamer.schedule}</h2>
                        
                        {streamer.status ? 
                         <button onClick={() => {AddToUser()}} className='addto'>Add to PlayList</button> :   <button onClick={() => {AddToUser()}} className='addto'>Add to PlayList</button> 
