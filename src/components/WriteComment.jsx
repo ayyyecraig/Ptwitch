@@ -22,13 +22,13 @@ const WriteComment = ( props ) => {
 
     return (
         <div className='write-comment'>
-              <textarea
+              <input
                 className="Box"
                 type="text"
                 name="content"
                 value={formValues.content}
                 onChange={handleChange}
-            ></textarea>
+            ></input>
              <button className="submit-button" type="submit" onClick={handleSubmit} >Comment</button>
         </div>
     )
