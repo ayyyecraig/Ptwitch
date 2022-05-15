@@ -53,14 +53,12 @@ return (
         placeholder={formValues.content}
         onChange={handleChange}
         ></textarea>
-        {
-         user.id === comment.userId ?
+     
           <div >
             <button className="comment-update" onClick={() => update()}>Update</button>
             <button className="comment-delete" onClick={() => deleteComment(comment)}>Delete</button>
           </div>
-                : ''
-            }
+             
     </div>
 )
 }

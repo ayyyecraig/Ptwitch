@@ -15,8 +15,8 @@ const WriteComment = ( props ) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await NewComment(formValues.content, props.user.id, props.streamer.id)
-        navigate(`streamers`)
+        await NewComment(formValues.content,  props.streamer.id)
+        navigate(`/streamers/:id`)
         setForm({...formValues, content: ''})
     }
 

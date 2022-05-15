@@ -48,11 +48,11 @@ const StreamerDets = ({user, authenticated}) => {
                     
                     {authenticated && user ? 
                     
-                    <WriteComment streamer={streamer} user={user}/>: <WriteComment streamer={streamer} user={user}/>
+                    <WriteComment streamer={streamer} />: <WriteComment streamer={streamer} />
                     }
                     
                         
-                    <Comments streamer={streamer} user={user}/>
+                    <Comments streamer={streamer} />
          
         </div>
             

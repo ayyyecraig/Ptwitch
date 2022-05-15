@@ -33,9 +33,9 @@ const Streamer = () => {
         <div className="streamers-Playlists ">
          { 
              streamers.map((streamer) => (
-                 <div onClick={() => showStreamer(streamer)}>
+                 <div onClick={() => showStreamer(streamer)} className="block">
                      
-                     <img className="streamer-pics" src={streamer.img} alt="streamer" style={{display: 'block', maxWidth:'20%'}} />
+                     <img className="streamer-pics" src={streamer.img} alt="streamer" style={{display: 'block', maxWidth:'50%'}} />
                        <h1>{streamer.name}</h1>
                        <h2>{streamer.contentType}</h2>
                        

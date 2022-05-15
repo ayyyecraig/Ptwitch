@@ -1,0 +1,35 @@
+body{
+    background-color: #9344fb;
+}
+
+nav{
+    background-color: rgb(177 139 220);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+
+
+:link{
+     text-decoration: none;
+     font-size: larger;
+}
+.links:active{
+    color: black;
+}
+.links:after{
+    color: black;
+}
+
+.streamer-pics{
+    
+    border-radius: 25%;
+}
+
+.streamers-Playlists{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+}

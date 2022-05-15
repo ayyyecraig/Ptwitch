@@ -6,24 +6,27 @@ const Nav = (props) => {
     if(props.user){
         authenticatedOptions = (
             <nav className='authenicated'>
-                <Link to="/">Home</Link>
-                <Link to="/user">My Streams</Link>
-                <Link to='/streamers'>Streaming PlayLists</Link>
-
-                <Link onClick={props.handleLogOut} to="/" className='logout'>
-                    Log Out
-                </Link> 
+                <Link to="/" className='links norm'>Home</Link>
+                <Link to='/streamers' className='links norm '>Streaming PlayLists</Link>
+                <div>
+                    <Link onClick={props.handleLogOut} to="/" className='logout logs'>
+                        Log Out
+                    </Link> 
+                    <Link to="/user" className='links logs'>My Streams</Link>
+                </div>
             </nav>
         )
     }
 
     const publicOptions = (
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/login">My Streams</Link>
-            <Link to='/streamers'>Watchlists and Streamers</Link>
-            <Link to="register" className='links'>Register</Link>
-
+            <Link to="/" className='links norm'>Home</Link>
+            
+            <Link to='/streamers' className='links norm'>Watchlists and Streamers</Link>
+            <div>
+                <Link to="register" className='links logs'>Register</Link>
+                <Link to="/login" className='links logs'>My Streams</Link>
+            </div>
         </nav>
     )
 

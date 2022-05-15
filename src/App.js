@@ -54,11 +54,9 @@ export default function App() {
            {/* home */}
           <Route path="/" element={<Home authenticated={authenticated} user={user}/>}  />
 
-          {/* users playlist  */}
-          {/* <Route path="/user" element={<User user={user}     authenticated={authenticated}/>}/> */}
 
-          <Route path="/user" element={<User user={user}    setUserId={setUserId}      authenticated={authenticated}/>}/> */}
-          {/* all streamers page
+          <Route path="/user" element={<User user={user}    setUserId={setUserId}      authenticated={authenticated}/>}/>
+          {/* all streamers page */}
 
           <Route path="/streamers" element={<Streamer user={user}
                     authenticated={authenticated}/>}/>   
@@ -70,9 +68,9 @@ export default function App() {
           <Route path='/comments' element={<Comments user={user} authenticated={authenticated}/>} />
 
           {/* comment controller */}
-          <Route path='/comments/:id' element={<Comments user={user} authenticated={authenticated} />} />
+          <Route path='/comments/:id' element={<Comments />} />
 
-          <Route path="/comments/:id" element={<Comment user={user} authenticated={authenticated} />} />
+          <Route path="/comments/:id" element={<Comment  />} />
 
 
             {/* auth routes */}
