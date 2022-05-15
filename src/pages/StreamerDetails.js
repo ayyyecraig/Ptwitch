@@ -47,6 +47,7 @@ const StreamerDets = ({user, authenticated}) => {
                        <div className='fake'>
                             <h2>becky234</h2>
                             <p>here he here he</p>
+                            <Comments streamer={streamer} />
                        </div>
                        {/* <div className='fake'>
                             <h2>becky234</h2>
@@ -68,9 +69,7 @@ const StreamerDets = ({user, authenticated}) => {
                   
                     
                     <WriteComment streamer={streamer} /> 
-                    <div className='comments'>                 
-                    <Comments streamer={streamer} />
-                    </div>  
+                    
          
         </div>
             
