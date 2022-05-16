@@ -7,7 +7,7 @@ import WriteComment from '../components/WriteComment'
 import { GetStreamerDetails, AddStreamer} from "../services/StreamerServices"
 
 
-const StreamerDets = ({user, authenticated}) => {
+const StreamerDets = () => {
 
     let { id } = useParams()
     let navigate = useNavigate()
@@ -26,7 +26,7 @@ const StreamerDets = ({user, authenticated}) => {
    
     const AddToUser = () => {
         if(streamer.status === true ) {
-            AddStreamer(streamer.id, user.id)
+            AddStreamer(streamer.id)
         navigate('/user')
         } else{
             alert('poggers')

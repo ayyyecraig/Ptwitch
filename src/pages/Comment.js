@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { GetById, UpdateComment, DeleteComment } from '../services/CommentServices';
+import { GetByCommentId, UpdateComment, DeleteComment } from '../services/CommentServices';
 
-const CommentDetails = ( { user } ) => {
+const CommentDetails = ( ) => {
 
     const [ formValues, setFormValues ] = useState({
-        username: '',
+        name: '',
         content: ''
     })
 
@@ -16,15 +16,19 @@ let { id } = useParams();
 const [ comment, setComment] = useState({})
 
 const handleComment = async () => {
-    const data = await GetById(id)
+    const data = await GetByCommentId(id)
     setComment(data)
-    setFormValues({ username: comment.User.username,
+    setFormValues({ name: comment.Streamer.name,
     content: comment.content})
+}
+
+const handleData = async () =>{
+    handleComment()
 }
 
  useEffect(() => {
      handleComment()
- })
+ }, [comment.content])
 
 const handleChange = (e) => {
     setFormValues({...formValues, [e.target.name]: e.target.value })
@@ -37,7 +41,7 @@ const deleteComment = async (comment) => {
     navigate(`/streamers/${comment.streamerId}`)
 }
 
-const update = async () => {
+const UpdateComments = async () => {
     await UpdateComment(comment.id, parseInt(formValues.content))
     navigate(`/streamers/${comment.streamerId}`)
 }
@@ -55,7 +59,7 @@ return (
         ></textarea>
      
           <div >
-            <button className="comment-update" onClick={() => update()}>Update</button>
+            <button className="comment-update" onClick={() => UpdateComments()}>Update</button>
             <button className="comment-delete" onClick={() => deleteComment(comment)}>Delete</button>
           </div>
              
