@@ -36,13 +36,6 @@ const handleChange = (e) => {
 }
 
 
-
-// const updateComments = async () => {
-//    console.log(comment.Streamer.id)
-//     await UpdateComment(comment.Streamer.id, formValues.content)
-//     navigate(`/streamers/${comment.Streamer.id}`)
-// }
-
 const handleSubmit = async (e) => {
   
     await UpdateComment(comment.Streamer.id, formValues.content)
@@ -55,19 +48,16 @@ return (
       <p>{formValues.name}</p>
      
 
-      <textarea
-        className="update-content"
+      <input
+        className="Box"
         type="text"
         name="content"
         value={formValues.content}
-        placeholder={formValues.content}
         onChange={handleChange}
-        ></textarea>
-        {/* {          streamer.id === comment.Streamer.id ? */}
-            <button className="comment-update" onClick={() => handleSubmit()}>Update</button>
-        {/* //     : ''
-             
-        // } */}
+        ></input>
+        
+            <button className="submut-button" onClick={() => handleSubmit()}>Update</button>
+         
        
              
     </div>
