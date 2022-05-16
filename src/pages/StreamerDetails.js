@@ -47,8 +47,7 @@ const StreamerDets = ({user, authenticated}) => {
                         <button onClick={() => {AddToUser()}} className='addto'>Add to PlayList</button> :   <button onClick={() => {AddToUser()}} className='addto'>Add to PlayList</button> 
                        }
                        <div className='fake'>
-                            <h2>becky234</h2>
-                            <p>here he here he</p>
+                           
                             <Comments streamer={streamer} />
                        </div>
                        {/* <div className='fake'>
