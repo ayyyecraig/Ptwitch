@@ -50,6 +50,7 @@ const StreamerDets = () => {
                        <div className='fake'>
                            
                             <Comments streamer={streamer} />
+                           
                             
                        </div>
                        {/* <div className='fake'>

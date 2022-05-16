@@ -37,7 +37,7 @@ const handleChange = (e) => {
 
 
 const handleSubmit = async (e) => {
-  
+  console.log(formValues, "here")
     await UpdateComment(comment.Streamer.id, formValues.content)
     setFormValues({...formValues, content: ''})
     navigate(`/streamers/${comment.Streamer.id}`)
