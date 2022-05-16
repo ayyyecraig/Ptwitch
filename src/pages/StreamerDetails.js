@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Comments from '../components/Comments'
 import WriteComment from '../components/WriteComment'
+
 import { GetStreamerDetails, AddStreamer} from "../services/StreamerServices"
 
 
@@ -49,6 +50,7 @@ const StreamerDets = () => {
                        <div className='fake'>
                            
                             <Comments streamer={streamer} />
+                            
                        </div>
                        {/* <div className='fake'>
                             <h2>becky234</h2>
@@ -70,7 +72,7 @@ const StreamerDets = () => {
                   
                     
                     <WriteComment streamer={streamer} /> 
-                    
+                   
          
         </div>
             

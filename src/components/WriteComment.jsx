@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { NewComment } from '../services/CommentServices';
 
 
@@ -8,7 +7,7 @@ const WriteComment = ( props ) => {
         content: ''
     });
 
-    let navigate = useNavigate()
+ 
 
 
     const handleChange = (e) => {

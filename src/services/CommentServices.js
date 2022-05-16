@@ -31,9 +31,9 @@ export const NewComment = async ( content, streamerId) => {
       }
   }
 
-  export const DeleteComment = async (comment_Id) => {
+  export const DeleteComment = async (commentId) => {
     try {
-      const res = await Client.delete(`/comments/${comment_Id}`)
+      const res = await Client.delete(`/comments/${commentId}`)
       return res.data
     } catch (error) {
         throw error

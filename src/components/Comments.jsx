@@ -25,8 +25,6 @@ useEffect(() => {
             }
         })
         setComments(selectedComments)
-        console.log(data, "comment crud boi")
-
     } 
     handleComments()
 }, [comments.id])
@@ -40,6 +38,7 @@ return (
                  viewComment(comment)}>
                      <p className='comment-dets'>{comment.Streamer.name}</p>
                      <p className='comment-dets'>{comment.content} </p>
+                     
                      
                  </div>
             ))

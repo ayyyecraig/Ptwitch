@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { GetByCommentId, UpdateComment, DeleteComment } from '../services/CommentServices';
+import { GetByCommentId, UpdateComment } from '../services/CommentServices';
 
-const CommentDetails = ( ) => {
+const CommentDetails = ({ streamer } ) => {
 
     const [ formValues, setFormValues ] = useState({
-        name: '',
+  
         content: ''
     })
 
@@ -18,7 +18,7 @@ const [ comment, setComment] = useState({})
 const handleComment = async () => {
     const data = await GetByCommentId(id)
     setComment(data)
-    setFormValues({ name: comment.Streamer.name,
+    setFormValues({ content: comment.Streamer,
     content: comment.content})
 }
 
@@ -32,36 +32,43 @@ const handleData = async () =>{
 
 const handleChange = (e) => {
     setFormValues({...formValues, [e.target.name]: e.target.value })
+   
 }
 
 
 
-const deleteComment = async (comment) => {
-    await DeleteComment(comment.id)
-    navigate(`/streamers/${comment.streamerId}`)
-}
+// const updateComments = async () => {
+//    console.log(comment.Streamer.id)
+//     await UpdateComment(comment.Streamer.id, formValues.content)
+//     navigate(`/streamers/${comment.Streamer.id}`)
+// }
 
-const UpdateComments = async () => {
-    await UpdateComment(comment.id, parseInt(formValues.content))
-    navigate(`/streamers/${comment.streamerId}`)
+const handleSubmit = async (e) => {
+  
+    await UpdateComment(comment.Streamer.id, formValues.content)
+    setFormValues({...formValues, content: ''})
+    navigate(`/streamers/${comment.Streamer.id}`)
 }
 
 return (
     <div>
-      <p>{formValues.username}</p>
+      <p>{formValues.name}</p>
+     
+
       <textarea
-        className="update-review-content"
+        className="update-content"
         type="text"
         name="content"
         value={formValues.content}
         placeholder={formValues.content}
         onChange={handleChange}
         ></textarea>
-     
-          <div >
-            <button className="comment-update" onClick={() => UpdateComments()}>Update</button>
-            <button className="comment-delete" onClick={() => deleteComment(comment)}>Delete</button>
-          </div>
+        {/* {          streamer.id === comment.Streamer.id ? */}
+            <button className="comment-update" onClick={() => handleSubmit()}>Update</button>
+        {/* //     : ''
+             
+        // } */}
+       
              
     </div>
 )

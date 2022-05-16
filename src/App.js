@@ -10,7 +10,7 @@ import LogIn from './components/Login'
 import { CheckSession } from './services/Auth'
 import { useEffect, useState } from 'react'
 import StreamerDets from './pages/StreamerDetails'
-import Comment from './pages/Comment'
+import Comment from './components/Comment'
 import Comments from './components/Comments'
 
 
@@ -64,13 +64,13 @@ export default function App() {
             {/* indivual streamer  */}
           <Route path="streamers/:id"   element={<StreamerDets authenticated={authenticated} user={user}/> } />
 
-            shows all comments
-          <Route path='/comments' element={<Comments user={user} authenticated={authenticated}/>} />
+             {/* comment controller */}
+          <Route path='/comments' element={<Comments />} />
 
-          {/* comment controller */}
-          <Route path='/comments/:id' element={<Comments />} />
+       
+          <Route path='/comments/:id' element={<Comment />} />
 
-          <Route path="/comments/:id" element={<Comment  />} />
+    
 
 
             {/* auth routes */}
